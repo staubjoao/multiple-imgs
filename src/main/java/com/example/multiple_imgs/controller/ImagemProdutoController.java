@@ -1,9 +1,7 @@
 package com.example.multiple_imgs.controller;
 
 import com.example.multiple_imgs.model.ImagemProduto;
-import com.example.multiple_imgs.model.Produto;
 import com.example.multiple_imgs.repository.ImagemProdutoRepository;
-import com.example.multiple_imgs.repository.ProdutoRepository;
 import lombok.RequiredArgsConstructor;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +23,6 @@ public class ImagemProdutoController {
 
     @Autowired
     private ImagemProdutoRepository imagemProdutoRepository;
-
-    @Autowired
-    private ProdutoRepository produtoRepository;
 
     @PostMapping("/upload/{refs}")
     public ResponseEntity<?> addPhotos(@RequestParam("images") List<MultipartFile> files, @PathVariable String refs) {
